@@ -28,5 +28,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('Rto.2021');
         $user->assignRole('Admin');
         $user->save();
+        
+        User::factory(12)->create();
     }
 }
