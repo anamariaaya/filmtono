@@ -1,0 +1,2 @@
+function mainSlide(){const e=["../build/img/1.jpg","../build/img/2.jpg","../build/img/3.jpg","../build/img/4.jpg","../build/img/5.jpg","../build/img/6.jpg","../build/img/7.jpg"],i=document.querySelector(".slider");e.forEach((d,n)=>{const t=document.createElement("IMG");t.src=""+e[n],t.dataset.imagenId=n,i.appendChild(t)});document.querySelector(".next"),document.querySelector(".prev");moverDerecha()}document.addEventListener("DOMContentLoaded",(function(){mainSlide()}));
+//# sourceMappingURL=prueba.js.map
