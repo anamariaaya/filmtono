@@ -18,6 +18,9 @@
         "lodash": "^4.17.21",
         "postcss": "^8.4.5",
         "postcss-import": "^14.0.2",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.49.0",
+        "sass-loader": "^12.1.0",
         "tailwindcss": "^2.2.2"
     }
 }
