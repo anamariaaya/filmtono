@@ -12,8 +12,11 @@
             </div>
 
             <div class="login-header">
-                <a class="login-btn" href="/users.php">Log in</a>
-                <a class="signup-btn" href="/users.php">Sign up</a>
+                @auth
+                @else
+                    <a href="{{ route('login') }}" class="login-btn">Log in</a>
+                    <a href="{{ route('register') }}" class="signup-btn">Sign up</a>
+                @endauth
             </div>
         </div>
 
