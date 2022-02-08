@@ -16,9 +16,40 @@ const mix = require('laravel-mix');
 //         require('postcss-import'),
 //         require('tailwindcss'),
 //     ]);
+// module.exports = {
+//     module: {
+//       rules: [
+//         {
+//           test: /\.s[ac]ss$/i,
+//           use: [
+//             // Creates `style` nodes from JS strings
+//             "style-loader",
+//             // Translates CSS into CommonJS
+//             "css-loader",
+//             // Compiles Sass to CSS
+//             "sass-loader",
+//           ],
+//         },
+//       ],
+//     },
+//   };
+// module.exports={
+// module: {
+    
+//     loaders: [
+//       {
+//         test: /\.scss$/,
+//         loaders: ["style-loader", "css-loader", "sass-loader"]
+//       }
+//     ]
+//   },
+//   sassLoader: {
+//     includePaths: [path.resolve(__dirname, "./esources/sass/app.scss")]
+//   }
+// };
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');    
+    .sass('resources/sass/app.scss', 'public/css',{implementation: require('node-sass')});
 
 if (mix.inProduction()) {
     mix.version();
