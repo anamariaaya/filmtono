@@ -3,14 +3,26 @@
         <div class="slider">
             @foreach ($homesliders as $homeslider)
                 @if ($loop->iteration == 1)
-                    <img id="leftImg" src="{{ Storage::url($homeslider->image->url) }}" alt="imagen galería">
+                    @isset ($homeslider->image)
+                        <img id="leftImg" src="{{ Storage::url($homeslider->image->url) }}" alt="imagen galería">
+                    @else
+                        <img id="picture" src="https://cdn.pixabay.com/photo/2022/01/28/07/29/art-6973853_960_720.jpg" alt="">
+                    @endisset                    
                 @else
                     @if ($loop->iteration == 2)
-                        <img id="mainImg" class="mainImg" src="{{ Storage::url($homeslider->image->url) }}"
+                        @isset ($homeslider->image)
+                            <img id="mainImg" class="mainImg" src="{{ Storage::url($homeslider->image->url) }}"
                             alt="{{ Storage::url($homeslider->image->url) }}">
+                        @else
+                            <img id="picture" src="https://cdn.pixabay.com/photo/2022/01/28/07/29/art-6973853_960_720.jpg" alt="">
+                        @endisset  
                     @else
                         @if ($loop->iteration == 3)
-                            <img id="rightImg" src="{{ Storage::url($homeslider->image->url) }}" alt="imagen galería">
+                            @isset ($homeslider->image)
+                                <img id="rightImg" src="{{ Storage::url($homeslider->image->url) }}" alt="imagen galería">
+                            @else
+                                <img id="picture" src="https://cdn.pixabay.com/photo/2022/01/28/07/29/art-6973853_960_720.jpg" alt="">
+                            @endisset  
                         @else
 
                         @endif
