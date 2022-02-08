@@ -1,2 +1,4 @@
-//
-@import 'style.scss';
+@use 'base';
+@use 'inner';
+@use 'layout';
+
