@@ -1,3 +1,22 @@
+@php
+    $active_home = "";
+    $active_search = "";
+    $active_cart = "";
+    $active_bell = "";
+
+    if (request()->routeIs('home')){
+        $active_home = "active";
+    } elseif (request()->routeIs('search')) {
+        $active_search = "active";
+    } elseif (request()->routeIs('cart')) {
+        $active_cart = "active";
+    } elseif (request()->routeIs('bell')) {
+        $active_bell = "active";
+    } else {
+
+    }
+@endphp
+
 <div>
     <header class="header">
         <div class="topbar">
@@ -34,16 +53,16 @@
 
         <nav class="menu">
             <a href="/">
-                <img class="menu-btn" src="{{ Storage::url('images/home.svg') }}" />
+                <img class="menu-btn {{ $active_home }}" src="{{ Storage::url('images/home.svg') }}" />
             </a>
             <a href="/search.php">
-                <img class="menu-btn" src="{{ Storage::url('images/search.svg') }}" />
+                <img class="menu-btn {{ $active_search }}" src="{{ Storage::url('images/search.svg') }}" />
             </a>
             <a href="">
-                <img class="menu-btn" src="{{ Storage::url('images/cart.svg') }}" />
+                <img class="menu-btn {{ $active_cart }}" src="{{ Storage::url('images/cart.svg') }}" />
             </a>
             <a href="">
-                <img class="menu-btn" src="{{ Storage::url('images/bell.svg') }}" />
+                <img class="menu-btn {{ $active_bell }}" src="{{ Storage::url('images/bell.svg') }}" />
             </a>
             <div class="dropdown-btn">
                 <img class="menu-btn" id="menu-btn" src="{{ Storage::url('images/more.svg') }}" />
