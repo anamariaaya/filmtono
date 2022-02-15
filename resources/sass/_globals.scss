@@ -11,7 +11,7 @@ body {
     font-family: $mainFont;
     font-size: 1.6rem;
     line-height: 1.8;
-    background-color: $darkGray;
+    background-image: linear-gradient($darkGray 65%, $gray);
 }
 
 p {

@@ -354,7 +354,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   line-height: 1.8;
-  background-color: #292B3F;
+  background-image: linear-gradient(#292B3F, #323246);
 }
 
 p {
