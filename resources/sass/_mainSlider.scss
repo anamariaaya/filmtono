@@ -30,15 +30,15 @@
         z-index: 2;
     }
 
-    & .leftImg, .rightImg{
+    & #leftImg, #rightImg{
         filter: blur(5px);
         opacity: 0.8;
     }
 
-    & .leftImg{
+    & #leftImg{
         left: 0;
     }
-    & .rightImg{
+    & #rightImg{
         right: 0;
     }
 }

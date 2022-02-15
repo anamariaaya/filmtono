@@ -354,7 +354,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   line-height: 1.8;
-  background-color: #323246;
+  background-color: #292B3F;
 }
 
 p {
@@ -757,16 +757,16 @@ p {
   z-index: 2;
 }
 
-.slider .leftImg, .slider .rightImg {
+.slider #leftImg, .slider #rightImg {
   filter: blur(5px);
   opacity: 0.8;
 }
 
-.slider .leftImg {
+.slider #leftImg {
   left: 0;
 }
 
-.slider .rightImg {
+.slider #rightImg {
   right: 0;
 }
 
@@ -837,7 +837,7 @@ p {
 }
 
 .cat-wrapper .cat-container {
-  background-color: #505070;
+  background-color: #323246;
   padding: 2rem;
   border-radius: 2rem;
 }
