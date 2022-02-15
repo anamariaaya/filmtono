@@ -1,0 +1,90 @@
+
+.footer{
+    background-color: $darkGray;
+    padding: $separate 1rem;
+    place-items: center;
+    margin-top: 2rem;
+    @include grid(1, $separate);
+
+    @include tablet{
+        @include grid(3, $separate);
+    }
+
+    .social-footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 2rem;
+
+        .logo-footer{
+            width: 20rem;            
+        }
+
+        @include phone{
+            .logo-footer{
+                width: 24rem;            
+            }
+        }
+        @include tablet{
+            .logo-footer{
+                width: 30rem;
+            }
+        }
+
+        .copyright{
+            color: $yellow;
+        }
+    }
+
+    .contact-footer{
+        display: none;
+    }
+
+    .terms-footer{
+        display: none;
+    }
+
+    @include tablet{
+        .social-footer{
+            padding-bottom: 0;
+        }
+        
+        .contact-footer{
+            display: block;
+            text-align: center;
+    
+            h3, p{
+                color: $yellow;
+            }
+    
+            h3{
+                font-weight: $bold;
+            }
+        }
+    
+        .terms-footer{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            font-size: 1.7rem;
+    
+            a{
+                color: $yellow;
+            }
+        }
+    }
+}
+
+.networks{
+    margin-top: $separate/ 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: $separate/ 2;
+
+    & i{
+        font-size: 3.2rem;
+        color: $yellow;
+    }
+}

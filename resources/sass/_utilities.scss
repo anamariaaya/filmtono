@@ -1,0 +1,20 @@
+.menu-btn{
+    filter:sepia(100%) grayscale(1) brightness(1);    
+    &.active{
+        filter:none;
+    }
+    &:hover{
+        filter: none;
+    }
+}
+
+.no-display{
+    display: none !important;
+}
+
+.light-bg{
+    background-color: $gray;
+    margin-top: 4rem;
+    padding: 2rem;
+    border-radius: 2rem;
+}
