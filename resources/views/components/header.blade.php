@@ -32,7 +32,7 @@
 
             <div class="login-header">
                 @auth
-                    <a href="" class="login-btn">Profile</a>
+                    <a href="{{ route('admin.home') }}" class="login-btn">Dashboard</a>
                     {{-- <a href="" class="signup-btn">Log out</a> --}}
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Homeslider;
 use App\Models\Image;
+use App\Models\Song;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,8 @@ class HomeController extends Controller
                         ->join('Images', 'Homesliders.id', '=', 'Images.imageable_id')
                         ->get();
 
-        return view('welcome', compact('homesliders'));
+        $songs = Song::where('status', true)->get();
+
+        return view('welcome', compact('homesliders', 'songs'));
     }
 }

@@ -104,7 +104,7 @@ class HomeSliderController extends Controller
             }
         }
 
-        return redirect()->route('admin.homesliders.edit', $homeslider)->with('info', 'Home slider updated successfully');
+        return redirect()->route('admin.homesliders.index')->with('info', 'Home slider updated successfully');
     }
 
     /**

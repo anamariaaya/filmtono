@@ -230,9 +230,7 @@ return [
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
-        ],
-
-        // Sidebar items:
+        ],        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -244,11 +242,19 @@ return [
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'Home'],
+        // Sidebar items:
         [
             'text' => 'Slider',
             'route' => 'admin.homesliders.index',
             'icon' => 'fas fa-band-aid',
         ],
+        ['header' => 'Songs'],
+        // Sidebar items:
+        [
+            'text' => 'Songs',
+            'route' => 'admin.songs.index',
+            'icon' => 'fas fa-solid fa-music',
+        ],        
     ],
 
     /*

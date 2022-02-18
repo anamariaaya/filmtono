@@ -1,11 +1,12 @@
 <x-app-layout>
     <section class="container">
-        @livewire('homesliders', ['homesliders' => $homesliders])
+        @livewire('homesliders', ['homesliders' => $homesliders, 'songs' => $songs])
     </section>
 </x-app-layout>
 
 <script type="text/javascript">
     const homesliders = @json($homesliders);
+    const songs =  @json($songs);
     let izq, cen, der;
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -13,6 +14,11 @@
         cen = 1;
         der = 2;
 
+        // Set home songs
+        const vidifra = document.querySelector('#videoiframe');
+        vidifra.src = songs[0].video_url;
+        
+        // Set home sliders
         total_sliders = homesliders.length;
 
         const leftImg = document.querySelector('#leftImg');

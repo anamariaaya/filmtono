@@ -7,7 +7,7 @@ use Livewire\Component;
 class Homesliders extends Component
 {
 
-    public $homesliders;
+    public $homesliders, $songs, $videourl;
     
     public function render()
     {
