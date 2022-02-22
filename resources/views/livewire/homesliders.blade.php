@@ -19,7 +19,7 @@
                     @foreach ($songs as $song)
                         <button type="button" class="playlist-btn" wire:click="$set('videourl', '{{ $song->video_url }}')">
                             <img src="{{ Storage::url('images/play-btn.svg') }}" />
-                            {{ $song->title }}
+                            {{ $song->title }} - {{ $song->user->name }}
                         </button>
                     @endforeach
                 </div>

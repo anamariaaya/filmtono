@@ -9,5 +9,10 @@ class Song extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'video_url', 'status'];
+    protected $fillable = ['title', 'video_url', 'user_id', 'status'];
+
+    // Relacion uno a muchos (inversa)
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

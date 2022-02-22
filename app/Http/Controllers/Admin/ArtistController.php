@@ -5,12 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Song;
 use App\Models\User;
 
-use App\Http\Requests\SongRequest;
+use App\Http\Requests\ArtistRequest;
 
-class SongController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +18,7 @@ class SongController extends Controller
      */
     public function index()
     {
-        return view('admin.songs.index');
+        return view('admin.artists.index');
     }
 
     /**
@@ -29,12 +28,7 @@ class SongController extends Controller
      */
     public function create()
     {
-        $users = User::where('status', true)
-                ->role('Artist')
-                ->orderBy('name')
-                ->pluck('name','Id');
-
-        return view('admin.songs.create',compact('users'));
+        return view('admin.artists.create');
     }
 
     /**
@@ -43,11 +37,11 @@ class SongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SongRequest $request)
+    public function store(artistRequest $request)
     {
-        $song = Song::create($request->all());
+        $artist = User::create($request->all());
 
-        return redirect()->route('admin.songs.index')->with('info', 'Song created successfully');
+        return redirect()->route('admin.artists.index')->with('info', 'Artist created successfully');
     }
 
     /**
@@ -56,9 +50,9 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Song $song)
+    public function show(User $artist)
     {
-        return view('admin.songs.show', compact('song'));
+        return view('admin.artists.show', compact('artist'));
     }
 
     /**
@@ -67,14 +61,9 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Song $song)
+    public function edit(User $artist)
     {
-        $users = User::where('status', true)
-                ->role('Artist')
-                ->orderBy('name')
-                ->pluck('name','Id');
-
-        return view('admin.songs.edit', compact('song', 'users'));
+        return view('admin.artists.edit', compact('artist'));
     }
 
     /**
@@ -84,12 +73,11 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SongRequest $request, Song $song)
+    public function update(artistRequest $request, User $artist)
     {
+        $artist->update($request->all());
 
-        $song->update($request->all());
-
-        return redirect()->route('admin.songs.index')->with('info', 'Song updated successfully');
+        return redirect()->route('admin.artists.index')->with('info', 'Artist updated successfully');
     }
 
     /**
@@ -98,10 +86,10 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Song $song)
+    public function destroy(User $artist)
     {
-        $song->delete();
+        $artist->delete();
 
-        return redirect()->route('admin.songs.index')->with('info', 'Song deleted successfully');
+        return redirect()->route('admin.artists.index')->with('info', 'Artist deleted successfully');
     }
 }

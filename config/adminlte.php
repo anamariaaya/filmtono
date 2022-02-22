@@ -247,13 +247,23 @@ return [
             'text' => 'Slider',
             'route' => 'admin.homesliders.index',
             'icon' => 'fas fa-band-aid',
+            'active' => ['admin/homesliders*']
         ],
         ['header' => 'Songs'],
-        // Sidebar items:
+        // Songs items:
         [
             'text' => 'Songs',
             'route' => 'admin.songs.index',
             'icon' => 'fas fa-solid fa-music',
+            'active' => ['admin/songs*']
+        ],
+        ['header' => 'Artists'],
+        // Artists items:
+        [
+            'text' => 'Artists',
+            'route' => 'admin.artists.index',
+            'icon' => 'fas fa-solid fa-microphone',
+            'active' => ['admin/artists*']
         ],        
     ],
 

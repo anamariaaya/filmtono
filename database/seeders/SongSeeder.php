@@ -19,48 +19,56 @@ class SongSeeder extends Seeder
         $song->title = "Canción numero 1";
         $song->video_url = "https://www.youtube.com/embed/LALUQNpm4zk";
         $song->status = true;
+        $song->user_id = 3;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 2";
         $song->video_url = "https://www.youtube.com/embed/EVLFwbyLX3A";
         $song->status = true;
+        $song->user_id = 4;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 3";
         $song->video_url = "https://www.youtube.com/embed/g5JAOnrmjQg";
         $song->status = true;
+        $song->user_id = 5;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 4";
         $song->video_url = "https://www.youtube.com/embed/5SodqEc8mAc";
         $song->status = true;
+        $song->user_id = 6;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 5";
         $song->video_url = "https://www.youtube.com/embed/MqrScuLXoSo";
         $song->status = false;
+        $song->user_id = 7;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 6";
         $song->video_url = "https://www.youtube.com/embed/a2DSskFgT5E";
         $song->status = true;
+        $song->user_id = 8;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 7";
         $song->video_url = "https://www.youtube.com/embed/GZ9ic9QSO5U";
         $song->status = false;
+        $song->user_id = 9;
         $song->save();
 
         $song = new Song();
         $song->title = "Canción numero 8";
         $song->video_url = "https://www.youtube.com/embed/y3MWfPDmVqo";
         $song->status = true;
+        $song->user_id = 10;
         $song->save();
     }
 }
