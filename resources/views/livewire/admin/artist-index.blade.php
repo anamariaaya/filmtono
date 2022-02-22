@@ -11,38 +11,36 @@
                 <input wire:model="search" class="form-control" placeholder="Enter text to search">
             </div>
     
-            @if ($songs->count())
+            @if ($artists->count())
                 <div class=card-body>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Title</td>
-                                <td>Video url</td>
-                                <td>Artist</td>
+                                <td>Name</td>
+                                <td>Email</td>
                                 <td>Status</td>
-                                <td colspan="2">Action</td>
+                                <td>Action</td>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($songs as $song)
+                            @foreach ($artists as $artist)
                                 <tr>
-                                    <td>{{$song->id}}</td>
-                                    <td>{{$song->title}}</td>
-                                    <td>{{$song->video_url}}</td>
-                                    <td>{{$song->user->name}}</td>
+                                    <td>{{$artist->id}}</td>
+                                    <td>{{$artist->name}}</td>
+                                    <td>{{$artist->email}}</td>
                                     <td>
-                                        @if ($song->status)
+                                        @if ($artist->status)
                                             Active
                                         @else
                                             Inactive
                                         @endif
                                     </td>
+                                    {{-- <td width="10px">
+                                        <a class="btn btn-primary btn-sm" href="{{route('admin.artists.edit', $artist)}}">Edit</a>
+                                    </td> --}}
                                     <td width="10px">
-                                        <a class="btn btn-primary btn-sm" href="{{route('admin.songs.edit', $song)}}">Edit</a>
-                                    </td>
-                                    <td width="10px">
-                                        <form action="{{route('admin.songs.destroy', $song)}}" method="POST">
+                                        <form action="{{route('admin.artists.destroy', $artist)}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -55,7 +53,7 @@
                 </div>
     
                 <div class="card-footer">
-                    {{$songs->links()}}
+                    {{$artists->links()}}
                 </div>
             @else
                 <div class="card-body">

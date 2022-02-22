@@ -14,6 +14,10 @@
         <span class="text-danger">{{$message}}</span>
     @enderror
 </div>
+<div class="form-group">
+    {!! Form::label('user_id', 'Artist') !!}
+    {!! Form::select('user_id', $users, null, ['class' => 'form-control'] ) !!}
+</div>
 <div class="forn-group">
     <p class="font-weight-bold">Status</p>
     <label>
