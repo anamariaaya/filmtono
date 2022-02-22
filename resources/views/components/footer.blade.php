@@ -4,7 +4,7 @@
             {{-- <img class="logo-footer" src="build/img/logo.svg" alt="logo"> --}}
             
             <a href="{{ route('home') }}">
-                <x-jet-application-mark class="block h-9 w-auto" />
+                <x-jet-application-mark class="logo" />
             </a>
 
             <div class="networks">

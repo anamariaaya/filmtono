@@ -354,7 +354,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   line-height: 1.8;
-  background-image: linear-gradient(#292B3F, #323246);
+  background-image: linear-gradient(#292B3F 65%, #323246);
 }
 
 p {
@@ -369,6 +369,7 @@ p {
 
 a {
   text-decoration: none;
+  color: #FFFFFF;
 }
 
 img,
@@ -458,6 +459,73 @@ p {
   border-radius: 2rem;
 }
 
+.recuadro {
+  width: 70%;
+  margin: 5rem auto;
+  display: grid;
+  place-items: center;
+  background-color: #7E7B99;
+  padding: 5rem;
+  border-radius: 1rem;
+}
+
+.recuadro form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recuadro form .campos {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.recuadro form label {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+}
+
+.recuadro form input {
+  background-color: #323246;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.recuadro form input:focus {
+  border: none;
+}
+
+.recuadro form .rememberMe {
+  display: flex;
+  font-size: 2rem;
+}
+
+.recuadro form .rememberMe span {
+  margin-left: 1rem;
+}
+
+.recuadro form .forgot {
+  display: flex;
+  flex-direction: column;
+}
+
+.recuadro form .forgot a {
+  margin-bottom: 2rem;
+}
+
+.botones {
+  background-color: #FD9526;
+  padding: 1rem 3rem;
+  text-align: center;
+  border: none;
+  border-radius: 1rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
 .topbar {
   margin: 2.5rem;
   display: grid;
@@ -538,7 +606,7 @@ p {
   }
 }
 
-.login-header a {
+.login-header .logueo {
   color: #FFFFFF;
   padding: 0.3rem 1.5rem;
   border-radius: 1rem;
@@ -547,15 +615,19 @@ p {
   font-size: 1.4rem;
 }
 
+.login-header .logueo:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 480px) {
-  .login-header a {
+  .login-header .logueo {
     font-size: 1.7rem;
     padding: 0.3rem 2rem;
   }
 }
 
 @media (min-width: 950px) {
-  .login-header a {
+  .login-header .logueo {
     padding: 0.3rem 3rem;
   }
 }

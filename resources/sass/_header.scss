@@ -67,13 +67,16 @@
         margin: auto;
     }
 
-     & a{
+    .logueo{
         color: $white;
         padding: 0.3rem 1.5rem;
         border-radius: 1rem;
         font-family: $secFont;
         font-weight: $bold;
         font-size: 1.4rem;
+        &:hover{
+            cursor: pointer;
+        }
 
         @include phone{
             font-size: 1.7rem;

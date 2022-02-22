@@ -22,7 +22,7 @@
         <div class="topbar">
             <div class="header-left">
                 <a href="{{ route('home') }}">
-                    <x-jet-application-mark class="block h-9 w-auto" />
+                    <x-jet-application-mark class="logo" />
                 </a>
 
                 <div class="search-bar">
@@ -32,12 +32,12 @@
 
             <div class="login-header">
                 @auth
-                    <a href="{{ route('admin.home') }}" class="login-btn">Dashboard</a>
-                    {{-- <a href="" class="signup-btn">Log out</a> --}}
-                    <form method="POST" action="{{ route('logout') }}">
+                    <a href="{{ route('admin.home') }}" class="logueo login-btn">Dashboard</a>
+                    {{-- <a href="" >Log out</a> --}}
+                    <form class="logueo signup-btn" method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <a class="signup-btn" href="{{ route('logout') }}"
+                        <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                         this.closest('form').submit();">
 
@@ -45,8 +45,8 @@
                         </a>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="login-btn">Log in</a>
-                    <a href="{{ route('register') }}" class="signup-btn">Sign up</a>
+                    <a href="{{ route('login') }}" class="logueo login-btn">Log in</a>
+                    <a href="{{ route('register') }}" class="logueo signup-btn">Sign up</a>
                 @endauth
             </div>
         </div>
