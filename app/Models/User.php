@@ -63,8 +63,12 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    // One to one relationship
+    public function profile(){
+        return $this->hasOne('App\Models\Profile');
+    }
 
-    // Relacion uno a muchos
+    // One to many relationship
     public function songs(){
         return $this->hasMany('App\Models\Song');
     }
