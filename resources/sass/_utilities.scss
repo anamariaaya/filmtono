@@ -19,6 +19,10 @@
     border-radius: 2rem;
 }
 
+.yellow-bg{
+    background-color: $yellow !important;
+}
+
 .recuadro{
     width: 70%;
     margin: 5rem auto;
@@ -47,9 +51,12 @@
             background-color: $gray;
             border: none;
             border-radius: 1rem;
-            padding: 0.5rem 1.5rem;
+            padding: 1rem 1.5rem;
+            color: $white;
             &:focus{
                 border: none;
+                color: $white;
+                outline: none !important;
             }
         }
         .rememberMe{
