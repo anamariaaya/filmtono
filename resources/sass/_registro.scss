@@ -1,0 +1,102 @@
+.signup-div{
+    width: 85%;
+    margin: auto;
+}
+
+.setup-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0;
+    margin: 0;
+
+    li {
+        width: 100%;
+        background-color: $softGray;
+        border-bottom: 1rem solid $darkGray;
+
+        &:first-of-type{
+            border-radius: 1rem 0 0 0;
+        }
+        &:last-of-type{
+            border-radius: 0 1rem 0 0;
+        }
+
+        &:hover{
+            background: $yellow;
+        }
+
+        & a {
+            display: block;
+            width: 100%;
+            color: $white;
+            padding: 1rem;
+            font-size: 1.8rem;
+            & i{
+                margin-right: 1rem;
+            }
+        }
+
+        &.active {
+            border-bottom: 1rem solid $yellow;
+            background: $lightGray;
+            & a{
+                color: $yellow;
+            }
+        }
+    }
+}
+.setup-content {
+    .campos{
+        display: flex;
+    }
+
+    .campos input[type="radio"]{
+        opacity: 0;
+        width: 0;
+    }
+    .campos input[type="radio"]:checked+ label, .campos input[type="radio"]:focus+ label {
+        background-color: $yellow;
+    }
+
+    .campos label{
+        padding: 1.5rem;
+        width: 80%;
+        margin: 2rem auto;
+        text-align: center;
+        background-color: $lightGray;
+        border-radius: 1rem;
+        cursor: pointer;
+        color: $white;
+    }
+
+    .campos label:hover {
+        background-color: $yellow;
+      }
+
+    & p{
+        width: 33rem;
+        margin: auto;
+        display: flex;
+        place-items: center;
+        text-align: center;
+        &::before, &::after{
+            content:"";
+            width: 15rem;
+            margin: 0 1rem;
+            height: 0.2rem;
+            display: block;
+            background-color: $white;
+        }
+    }
+
+    .signup-content {
+        background: $softGray;
+        padding: 2rem;
+        border-radius: 0 0 1rem 1rem;
+        height: auto;
+    }
+}

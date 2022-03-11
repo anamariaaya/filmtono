@@ -12,24 +12,69 @@
 
     <!--sección de playlist inicial-->
     <div class="container">
-        <div class="light-bg">
-            <h2 class="playlist-title">Top</h2>
-            <div class="ft-playlist">
-                <div class="ft-songs">
-                    @foreach ($songs as $song)
-                        <button type="button" class="playlist-btn" wire:click="$set('videourl', '{{ $song->video_url }}')">
-                            <img src="{{ Storage::url('images/play-btn.svg') }}" />
-                            {{ $song->title }} - {{ $song->user->name }}
-                        </button>
-                    @endforeach
-                </div>
+        <div class="coleccion-playlist">
+            <div class="light-bg">
+                <h2 class="playlist-title">Top</h2>
+                <div class="ft-playlist">
+                    <div class="ft-songs">
+                        @foreach ($songs as $song)
+                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
+                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
+                                {{ $song->title }} - {{ $song->user->name }}
+                            </button>
+                        @endforeach
+                    </div>
 
-                <iframe id="videoiframe" class="ft-player" width="560" height="315"
-                    src='{{ $videourl }}' title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
+                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
+
+            <div class="light-bg">
+                <h2 class="playlist-title">Top</h2>
+                <div class="ft-playlist">
+                    <div class="ft-songs">
+                        @foreach ($songs as $song)
+                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
+                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
+                                {{ $song->title }} - {{ $song->user->name }}
+                            </button>
+                        @endforeach
+                    </div>
+
+                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
+                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="light-bg">
+                <h2 class="playlist-title">Top</h2>
+                <div class="ft-playlist">
+                    <div class="ft-songs">
+                        @foreach ($songs as $song)
+                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
+                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
+                                {{ $song->title }} - {{ $song->user->name }}
+                            </button>
+                        @endforeach
+                    </div>
+
+                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
+                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
         </div>
     </div>
 </div>
