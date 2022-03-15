@@ -11,8 +11,18 @@ class Song extends Model
 
     protected $fillable = ['title', 'video_url', 'user_id', 'status'];
 
-    // Relacion uno a muchos (inversa)
+    // One-to-many relationship (inverse)
     public function user(){
         return $this->belongsTo('App\Models\User');
+    }
+
+    // One-to-many relationship (inverse)
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
+
+    // Many-to-many relationship
+    public function playlists(){
+        return $this->belongsToMany('App\Models\Playlist')->withTimestamps();
     }
 }

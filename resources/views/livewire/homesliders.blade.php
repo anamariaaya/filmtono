@@ -13,65 +13,27 @@
     <!--sección de playlist inicial-->
     <div class="container">
         <div class="coleccion-playlist">
-            <div class="light-bg">
-                <h2 class="playlist-title">Top</h2>
-                <div class="ft-playlist">
-                    <div class="ft-songs">
-                        @foreach ($songs as $song)
-                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
-                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
-                                {{ $song->title }} - {{ $song->user->name }}
-                            </button>
-                        @endforeach
+            @foreach ($playlists as $playlist)                
+                <div class="light-bg">
+                    <h2 class="playlist-title">{{ $playlist->name }}</h2>
+                    <div class="ft-playlist">
+                        <div class="ft-songs">
+                            @foreach ($playlist->songs as $song)
+                                <button type="button" class="playlist-btn {{ $song->id == $songid ? 'yellow-bg' : '' }}" wire:click="assignvalues('{{ $song->video_url }}', {{ $song->id }})">
+                                    <img src="{{ Storage::url('images/play-btn.svg') }}" />
+                                    {{ $song->title }} - {{ $song->user->name }}
+                                </button>
+                            @endforeach
+                        </div>
+
+                        <iframe id="videoiframe" class="ft-player" width="560" height="315"
+                            src='{{ $videourl }}' title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-
-                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
-                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
                 </div>
-            </div>
-
-            <div class="light-bg">
-                <h2 class="playlist-title">Top</h2>
-                <div class="ft-playlist">
-                    <div class="ft-songs">
-                        @foreach ($songs as $song)
-                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
-                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
-                                {{ $song->title }} - {{ $song->user->name }}
-                            </button>
-                        @endforeach
-                    </div>
-
-                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
-                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="light-bg">
-                <h2 class="playlist-title">Top</h2>
-                <div class="ft-playlist">
-                    <div class="ft-songs">
-                        @foreach ($songs as $song)
-                            <button type="button" class="playlist-btn yellow-bg" wire:click="$set('videourl', '{{ $song->video_url }}')">
-                                <img src="{{ Storage::url('images/play-btn.svg') }}" />
-                                {{ $song->title }} - {{ $song->user->name }}
-                            </button>
-                        @endforeach
-                    </div>
-
-                    <iframe id="videoiframe" class="ft-player" width="560" height="315"
-                        src='{{ $videourl }}' title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
+            @endforeach
 
             <button class="prev">Prev</button>
             <button class="next">Next</button>

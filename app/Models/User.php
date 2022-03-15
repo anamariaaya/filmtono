@@ -72,4 +72,9 @@ class User extends Authenticatable
     public function songs(){
         return $this->hasMany('App\Models\Song');
     }
+
+    // Polymorphic one-to-one relationship
+    public function image(){
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }    
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfilesTable extends Migration
+class CreatePlaylistSongTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,20 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('playlist_song', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 45);
-            $table->text('biography');
-            $table->string('website');
-            $table->string('phone', 30);
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->unsignedBigInteger('playlist_id');
+            $table->unsignedBigInteger('song_id');
 
-            $table->foreign('user_id')
+            $table->foreign('playlist_id')
                 ->references('id')
-                ->on('users')
+                ->on('playlists')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('song_id')
+                ->references('id')
+                ->on('songs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -38,6 +41,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('playlist_song');
     }
 }

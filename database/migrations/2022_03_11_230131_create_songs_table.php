@@ -24,8 +24,16 @@ class CreateSongsTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');                
+                ->restrictOnUpdate()
+                ->restrictOnDelete();
+
+            $table->unsignedBigInteger('category_id');
+
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->restrictOnUpdate()
+                ->restrictOnDelete();
 
             $table->timestamps();
         });

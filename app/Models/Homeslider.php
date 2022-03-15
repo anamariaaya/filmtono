@@ -11,8 +11,8 @@ class Homeslider extends Model
 
     protected $fillable = ['title', 'subtitle', 'status'];
 
-    // Relacion polimorfica
+    // Polymorphic one-to-one relationship
     public function image(){
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphOne('App\Models\Image', 'imageable');
     }
 }
