@@ -4,11 +4,11 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 
-use App\Models\User;
+use App\Models\Playlist;
 
 use Livewire\WithPagination;
 
-class ArtistIndex extends Component
+class PlaylistIndex extends Component
 {
     use WithPagination;
 
@@ -22,12 +22,10 @@ class ArtistIndex extends Component
 
     public function render()
     {
-        $artists = User::where('name', 'LIKE', '%' . $this->search . '%')
-                    ->orwhere('email', 'LIKE', '%' . $this->search . '%')
-                    ->role('Artist')
+        $playlists = Playlist::where('name', 'LIKE', '%' . $this->search . '%')
                     ->orderBy('name')
                     ->paginate();
 
-        return view('livewire.admin.artist-index', compact('artists'));
+        return view('livewire.admin.playlist-index', compact('playlists'));
     }
 }

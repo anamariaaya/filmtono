@@ -1803,7 +1803,7 @@ readers do not read off random characters that represent icons */
 .fa-gem:before {
   content: "\f3a5"; }
 
-.fa-genderless:before {
+.fa-genreless:before {
   content: "\f22d"; }
 
 .fa-get-pocket:before {
@@ -4065,10 +4065,10 @@ readers do not read off random characters that represent icons */
 .fa-tram:before {
   content: "\f7da"; }
 
-.fa-transgender:before {
+.fa-transgenre:before {
   content: "\f224"; }
 
-.fa-transgender-alt:before {
+.fa-transgenre-alt:before {
   content: "\f225"; }
 
 .fa-trash:before {

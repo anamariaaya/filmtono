@@ -1,6 +1,6 @@
 <div class="forn-group">
     {!! Form::label('name', 'Name') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter artist name']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Enter artist name']) !!}
 
     @error('name')
         <span class="text-danger">{{$message}}</span>
@@ -8,7 +8,7 @@
 </div>
 <div class="forn-group">
     {!! Form::label('email', 'Email') !!}
-    {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Enter artist email']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Enter artist email']) !!}
 
     @error('email')
         <span class="text-danger">{{$message}}</span>

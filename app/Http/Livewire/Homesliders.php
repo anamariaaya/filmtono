@@ -7,10 +7,10 @@ use Livewire\Component;
 class Homesliders extends Component
 {
 
-    public $homesliders, $videourl, $playlists, $songid;
+    public $homesliders, $playlists, $plistid, $songid;
 
-    public function assignvalues($vurl, $sid){
-        $this->videourl = $vurl;
+    public function assignvalues($plid, $sid){
+        $this->plistid = $plid;
         $this->songid = $sid;
     }
     

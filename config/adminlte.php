@@ -238,7 +238,7 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'route'         => 'admin.home',
+            'route'       => 'admin.home',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'Home'],
@@ -248,6 +248,29 @@ return [
             'route' => 'admin.homesliders.index',
             'icon' => 'fas fa-band-aid',
             'active' => ['admin/homesliders*']
+        ],
+        // Playlist items:
+        [
+            'text' => 'Playlist',
+            'route' => 'admin.playlists.index',
+            'icon' => 'fas fa-solid fa-headphones',
+            'active' => ['admin/playlists*']
+        ],
+        // Genres:
+        ['header' => 'Genres'],
+        // Musical
+        [
+            'text' => 'Musical',
+            'route' => ['admin.genres.list', ['genre' => 'M']],
+            'icon' => 'fas fa-solid fa-guitar',
+            'active' => ['admin/genres/*/M']
+        ],
+        // Audiovisual
+        [
+            'text' => 'Audiovisual',
+            'route' => ['admin.genres.list', ['genre' => 'A']],
+            'icon' => 'fas fa-solid fa-film',
+            'active' => ['admin/genres/*/A']
         ],
         ['header' => 'Songs'],
         // Songs items:
