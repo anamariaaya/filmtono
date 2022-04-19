@@ -9,13 +9,13 @@
     <div class="recuadro">
         <form method="POST" action="">
             <div class="radio">
-                <label class="label">Nombre de tu proyecto 
+                <label class="label">Nacional 
                 <input id="name" class="block mt-1 w-full" type="radio" name="region"/>
                 <span class="checkmark"></span>
                 </label>
             </div>
             <div class="radio">
-                <label  class="label">Nombre de tu proyecto 
+                <label  class="label">Internacional
                 <input id="name" class="block mt-1 w-full" type="radio" name="region"/>
                 <span class="checkmark"></span>
                 </label>
