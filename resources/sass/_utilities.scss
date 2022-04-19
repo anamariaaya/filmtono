@@ -29,6 +29,13 @@
     background-color: $yellow !important;
 }
 
+.text-left{
+    text-align: left;
+    background-color: transparent;
+    margin: 0;
+    margin-bottom: 4rem;
+}
+
 .recuadro{
     width: 70%;
     margin: 5rem auto;
@@ -53,7 +60,7 @@
             font-size: 2.4rem;
         }
 
-        & input{
+        & input, textarea{
             background-color: $softGray;
             border: none;
             border-radius: 1rem;
@@ -65,6 +72,71 @@
                 outline: none !important;
             }
         }
+
+        & textarea{
+            height: 12rem;
+        }
+
+        .radio{
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: $lightGray;
+
+
+            & label{
+                margin-right: 3rem;
+            }
+
+            .label {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                font-size: 22px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                
+                & input[type=radio]{
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                .checkmark {
+                    position: absolute;
+                    top: 15%;
+                    right: 0;
+                    height: 25px;
+                    width: 25px;
+                    background-color: #eee;
+                }
+                & input[type=radio]:checked ~ .checkmark {
+                    background-color: $yellow;
+                }
+                
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+
+                /* Show the indicator (dot/circle) when checked */
+                & input[type=radio]:checked ~ .checkmark:after {
+                    display: block;
+                }
+
+                .checkmark:after {
+                    top: 9px;
+                    left: 9px;
+                    width: 8px;
+                    height: 8px;
+                    background: $white;
+                    border-radius: 50%;
+                }
+            }
+        }
+
         .rememberMe{
             display: flex;
             font-size: 2rem;
@@ -139,7 +211,7 @@
         left: 0;
     }
 
-    .slider-next, .slider-prev{
+    .next, .prev{
         border: none;
         background-color: rgba($color: $white, $alpha: 0.3);        
         color: $darkGray;
@@ -154,5 +226,14 @@
         &:hover{
             cursor: pointer;
         }
+    }
+}
+
+.bloque-btn{
+    display: flex;
+    flex-direction: column;
+
+    & a{
+        margin-bottom: 2rem;
     }
 }

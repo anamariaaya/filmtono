@@ -387,6 +387,10 @@ h1, h2, h3 {
 }
 
 h1 {
+  background-color: #505070;
+  width: 75%;
+  border-radius: 2rem;
+  margin: auto;
   font-size: 2.8rem;
 }
 
@@ -469,6 +473,13 @@ p {
   background-color: #FD9526 !important;
 }
 
+.text-left {
+  text-align: left;
+  background-color: transparent;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+
 .recuadro {
   width: 70%;
   margin: 5rem auto;
@@ -496,7 +507,7 @@ p {
   font-size: 2.4rem;
 }
 
-.recuadro form input {
+.recuadro form input, .recuadro form textarea {
   background-color: #7E7B99;
   border: none;
   border-radius: 1rem;
@@ -504,10 +515,75 @@ p {
   color: #FFFFFF;
 }
 
-.recuadro form input:focus {
+.recuadro form input:focus, .recuadro form textarea:focus {
   border: none;
   color: #FFFFFF;
   outline: none !important;
+}
+
+.recuadro form textarea {
+  height: 12rem;
+}
+
+.recuadro form .radio {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #505070;
+}
+
+.recuadro form .radio label {
+  margin-right: 3rem;
+}
+
+.recuadro form .radio .label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Show the indicator (dot/circle) when checked */
+}
+
+.recuadro form .radio .label input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.recuadro form .radio .label .checkmark {
+  position: absolute;
+  top: 15%;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.recuadro form .radio .label input[type=radio]:checked ~ .checkmark {
+  background-color: #FD9526;
+}
+
+.recuadro form .radio .label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.recuadro form .radio .label input[type=radio]:checked ~ .checkmark:after {
+  display: block;
+}
+
+.recuadro form .radio .label .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  background: #FFFFFF;
+  border-radius: 50%;
 }
 
 .recuadro form .rememberMe {
@@ -586,7 +662,7 @@ p {
   left: 0;
 }
 
-.buttons .slider-next, .buttons .slider-prev {
+.buttons .next, .buttons .prev {
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
   color: #292B3F;
@@ -599,8 +675,17 @@ p {
   position: absolute;
 }
 
-.buttons .slider-next:hover, .buttons .slider-prev:hover {
+.buttons .next:hover, .buttons .prev:hover {
   cursor: pointer;
+}
+
+.bloque-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.bloque-btn a {
+  margin-bottom: 2rem;
 }
 
 .topbar {
@@ -1079,7 +1164,7 @@ p {
 
 .setup-panel li {
   width: 100%;
-  background-color: #7E7B99;
+  background-color: #505070;
   border-bottom: 1rem solid #292B3F;
 }
 
@@ -1109,7 +1194,7 @@ p {
 
 .setup-panel li.active {
   border-bottom: 1rem solid #FD9526;
-  background: #505070;
+  background: #323246;
 }
 
 .setup-panel li.active a {
@@ -1162,7 +1247,7 @@ p {
 }
 
 .setup-content .signup-content {
-  background: #7E7B99;
+  background: #323246;
   padding: 2rem;
   border-radius: 0 0 1rem 1rem;
   height: auto;
@@ -1355,5 +1440,66 @@ p {
     grid-row: 1/2;
     grid-column: 2/3;
   }
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+  background-color: #505070;
+  border-radius: 1rem;
+  margin: .7rem 0;
+}
+
+@media (min-width: 950px) {
+  .songs {
+    margin: 1rem 0;
+  }
+}
+
+.songs a {
+  color: #FFFFFF;
+  background-color: #7E7B99;
+  padding: 0.5rem;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto 0.5rem auto;
+  border-radius: 1rem;
+}
+
+.songs a:hover {
+  background-color: #FD9526;
+}
+
+.songs .songs-btn, .songs .firma-btn {
+  border: none;
+  color: #FFFFFF;
+  display: grid;
+  padding: 1rem 0.5rem;
+  text-align: left;
+  place-items: self-start;
+}
+
+.songs .songs-btn {
+  grid-template-columns: 10% auto;
+}
+
+.songs .firma-btn {
+  grid-template-columns: auto 10%;
+}
+
+.songs .firma-btn:hover {
+  background-color: #FD9526;
+  border-radius: 1rem;
+}
+
+.songs img {
+  filter: sepia(100%) grayscale(1) brightness(1);
+  margin: auto;
+  width: 1.5rem;
+}
+
+.songs p {
+  padding: 0 1rem;
+  margin: 0.5rem;
 }
 

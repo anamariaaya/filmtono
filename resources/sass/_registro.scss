@@ -15,7 +15,7 @@
 
     li {
         width: 100%;
-        background-color: $softGray;
+        background-color: $lightGray;
         border-bottom: 1rem solid $darkGray;
 
         &:first-of-type{
@@ -42,7 +42,7 @@
 
         &.active {
             border-bottom: 1rem solid $yellow;
-            background: $lightGray;
+            background: $gray;
             & a{
                 color: $yellow;
             }
@@ -94,7 +94,7 @@
     }
 
     .signup-content {
-        background: $softGray;
+        background: $gray;
         padding: 2rem;
         border-radius: 0 0 1rem 1rem;
         height: auto;
