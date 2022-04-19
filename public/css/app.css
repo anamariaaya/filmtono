@@ -474,7 +474,7 @@ p {
   margin: 5rem auto;
   display: grid;
   place-items: center;
-  background-color: #7E7B99;
+  background-color: #323246;
   padding: 5rem;
   border-radius: 1rem;
 }
@@ -497,7 +497,7 @@ p {
 }
 
 .recuadro form input {
-  background-color: #323246;
+  background-color: #7E7B99;
   border: none;
   border-radius: 1rem;
   padding: 1rem 1.5rem;
@@ -572,14 +572,14 @@ p {
   display: flex;
 }
 
-.buttons .slider-next {
+.buttons .next {
   box-shadow: -2px -2px 5px #202020;
   margin-right: -3.5rem;
   z-index: 1;
   right: 0;
 }
 
-.buttons .slider-prev {
+.buttons .prev {
   box-shadow: 2px 2px 5px #202020;
   margin-left: -3.5rem;
   z-index: 1;

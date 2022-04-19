@@ -34,7 +34,7 @@
     margin: 5rem auto;
     display: grid;
     place-items: center;
-    background-color: $softGray;
+    background-color: $gray;
     padding: $separate;
     border-radius: 1rem;
     & form{
@@ -54,7 +54,7 @@
         }
 
         & input{
-            background-color: $gray;
+            background-color: $softGray;
             border: none;
             border-radius: 1rem;
             padding: 1rem 1.5rem;
@@ -126,13 +126,13 @@
     z-index: 1;
     display: flex;
 
-    .slider-next{
+    .next{
         box-shadow: -2px -2px 5px #202020;
         margin-right: -3.5rem;
         z-index: 1;
         right: 0;
     }
-    .slider-prev{
+    .prev{
         box-shadow: 2px 2px 5px #202020;
         margin-left: -3.5rem;
         z-index: 1;
