@@ -11,10 +11,12 @@
     </div>
 
     <!--sección de playlist inicial-->
-    <div class="container">
-        <div class="coleccion-playlist">
-            @foreach ($playlists as $playlist)                
-                <div class="light-bg">
+    <div class="container slider-main">
+        <div class="light-bg">
+            <div class="wrapper">
+            @foreach ($playlists as $playlist) 
+            
+                
                     <h2 class="playlist-title">{{ $playlist->name }}</h2>
                     <div class="ft-playlist">
                         <div class="ft-songs">
@@ -32,9 +34,9 @@
                             allowfullscreen>
                         </iframe>
                     </div>
-                </div>
+                
             @endforeach
-
+            </div>
             <button class="prev">Prev</button>
             <button class="next">Next</button>
         </div>
